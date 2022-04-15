@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "rgb(166, 42, 42)"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      blockquote {
+        background: linear-gradient(
+              to right,
+              rgb(166, 42, 42) 6px,
+              transparent 4px
+            )
+            0 100%,
+          linear-gradient(to left, rgb(166, 42, 42) 6px, transparent 4px) 100% 0,
+          linear-gradient(to bottom, rgb(166, 42, 42) 6px, transparent 4px) 100%
+            0,
+          linear-gradient(to top, rgb(166, 42, 42) 6px, transparent 4px) 0 100%;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+      }
+
+      /* -- create the quotation marks -- */
+      blockquote:before,
+      blockquote:after {
+        font-family: FontAwesome;
+        position: absolute;
+        color: rgb(166, 42, 42);
+        font-size: 34px;
+      }
+
+      blockquote:before {
+        content: "\f10d";
+        top: -12px;
+        margin-right: -20px;
+        right: 100%;
+      }
+
+      blockquote:after {
+        content: "\f10e";
+        margin-left: -20px;
+        left: 100%;
+        top: auto;
+        bottom: -20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto">
+      <nav
+        class="bg-white fixed border-b z-10 container mx-auto inset-x-0 top-0 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="font-extrabold m-3 inline-flex hover:text-primary transition-all duration-500"
+        >
+          <img
+            class="h-20 w-20 mr-2"
+            src="https://dr-pepper-decalwrap.weebly.com/uploads/1/3/8/8/138828215/nw-logo-pp.png"
+            alt="logo"
+          />
+        </a>
+
+        <button
+          id="mobileMenuButton"
+          class="p-3 focus:outline-none md:hidden"
+          title="Open side menu"
+        >
+          <!-- SVG For "x" button -->
+          <svg
+            id="mobileMenuButtonClose"
+            class="w-12 h-12 hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+          <!-- SVG For "Menu burger" button -->
+          <svg
+            id="mobileMenuButtonOpen"
+            class="w-12 h-12"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- List of nav item -->
+        <div
+          id="sideMenuHideOnMobile"
+          class="font-semibold z-10 rounded-bl-md flex absolute top-0 right-0 transition-all duration-500 transform translate-x-0 w-1/2 md:w-1/4 md:justify-between md:h-full px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1"
+        >
+          <a
+            href="#"
+            class="mx-0 sm:mx-2 my-2 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all duration-500 py-1 sm:p-0"
+            >Our Company</a
+          >
+          <a
+            href="#"
+            class="mx-0 sm:mx-2 my-2 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all duration-500 py-1 sm:p-0"
+            >Careers</a
+          >
+          <a
+            href="#"
+            class="mx-0 sm:mx-2 my-2 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all duration-500 py-1 sm:p-0"
+            >Advert Program</a
+          >
+        </div>
+      </nav>
+      <main class="bg-white block mt-24 h-auto">
+        <div class="w-full flex flex-col">
+          <div class="w-full pt-12 px-1">
+            <img class="h-40" src="/img/banner.png" alt="banne" />
+          </div>
+          <div class="w-full pl-32 pt-4">
+            <h1 class="text-xl text-primary font-semibold md:text-4xl">
+              Welcome to Dr Pepper Snapple Groups ® Automobile Wraps Adverts
+            </h1>
+            <p class="py-2 text-base md:text-lg">
+              With a brand heritage spanning more than 200 years, Dr Pepper
+              Snapple Group’s portfolio includes more than 50 brands and
+              hundreds of flavors of carbonated soft drinks, juices, teas,
+              mixers, waters and other beverages. In order to enable our
+              customers explore our fun and flavorful world, we are currently
+              engaging interested parties nation-wide to participate in our
+              broad-based mobile wraps advertisement.
+            </p>
+          </div>
+          <div
+            class="w-full bg-primary mt-8 font-semibold text-white py-8 px-4 md:px-4"
+          >
+            <p class="text-base md:text-lg">
+              We appreciate your interest in our advert program. Hence, we
+              implore you to carefully go through the concepts of the advert
+              program clearly explained below before you take further actions on
+              registering for the program. The Advert opportunity is open to all
+              eligible candidates from all the States in United States. It is
+              very easy and simple, no application fees required.
+            </p>
+          </div>
+          <div class="w-full border rounded-md mt-8 p-4">
+            <div class="w-full mt-4 flex">
+              <div class="w-1/2 mr-2">
+                <h2 class="text-base font-semibold text-primary md:text-lg">
+                  Why Dr Pepper Snapple Group® Mobile Wraps?
+                </h2>
+                <p class="mt-2 text-base md:text-lg">
+                  Dr Pepper Snapple Group may have only been on the New York
+                  Stock Exchange for a short time, but our brands have a history
+                  dating back three centuries. Thinking about today’s state of
+                  economy, more and also more investors are turning towards an
+                  affordable form of advertisement to market their brands. While
+                  social media marketing has served the purpose well for
+                  international marketing, businesses choose making use of
+                  affordable Car Wraps for local marketing of their services as
+                  well as solutions. The conventional form of advertising being
+                  pricey, this kind of advertising has captured the marketplace
+                  since its advent. Colorful graphic designs on the body of cars
+                  or some other vehicles are most likely to capture attention of
+                  people on road.
+                </p>
+              </div>
+              <div class="w-1/2 ml-2 rounded-md bg-primary text-white p-2">
+                <h2 class="text-base font-semibold md:text-lg">
+                  Cost Effectiveness Of The Dr Pepper Snapple Group® Mobile
+                  Wraps
+                </h2>
+                <p class="mt-2 text-base md:text-lg">
+                  Several businesses realizing the affectivity of Car Wraps have
+                  implemented this into their organization method. Custom
+                  vehicles with wraps on them, driving over the high way or on a
+                  road jammed with visitors, supply the passengers a chance to
+                  read and also subconsciously remember the advert. Countless
+                  company owners have seen a substantial increase in
+                  organization due to advertising via the vehicle wraps. It is
+                  regarded to be both productive and cost-effective.
+                </p>
+              </div>
+            </div>
+            <div class="w-full mt-4">
+              <img class="w-full" src="/img/dr-pep.jpg" alt="pepper sample" />
+            </div>
+            <div class="w-full mt-4 rounded-md bg-gray-100 p-4">
+              <blockquote class="text-center text-base md:text-lg">
+                <h2 class="font-semibold">
+                  WOULD THE WRAPS HAVE ANY EFFECT ON MY CAR/BIKE/BOAT'S ORIGINAL
+                  FACTORY PAINTS WHEN REMOVED AT THE END OF THE PROGRAM?
+                </h2>
+                <p class="mt-2">
+                  Pepper Snapple Group® Car Wraps could shield the original
+                  factory paint of your car, which remains intact as long as the
+                  vinyl film stays on it. A vinyl design of 3M quality is the
+                  easiest to remove as well as leaves no residue behind, after
+                  removal. So, it is recommended to use a 3M certified car wrap
+                  from a registered company to find the ideal and long lasting
+                  wrap on your ride.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+          <div class="w-full bg-primary text-white mt-8 p-4">
+            <div class="w-full mt-4 flex">
+              <div class="w-1/2 mr-2">
+                <h2 class="text-base font-semibold md:text-lg">
+                  REMUNERATION
+                </h2>
+                <p class="mt-2 mb-4 text-base md:text-lg">
+                  You will be compensated with $500.00 per week which is
+                  essentially a "rental" payment for letting our company use the
+                  space and no fee is required from you. Dr Pepper Snapple
+                  Group® shall provide experts that would handle the advert
+                  placing on your car which would also include the installation
+                  of a GPS System on your car for determining the average weekly
+                  mileage covered by your car. You will receive an upfront
+                  payment of $500.00 in form of a check via courier service for
+                  accepting to carry this advert on your car.
+                </p>
+                <img
+                  class="rounded-md"
+                  src="/img/footer.png"
+                  alt="footer image"
+                />
+              </div>
+              <div class="w-1/2 ml-2 rounded-md bg-primary text-white p-2">
+                <p class="mt-2 text-base italic md:text-lg">
+                  Don't Have A Car? If you don't have a car, you can also
+                  participate if you have a bike or boat and if you are a
+                  resident in the United States above eighteen (18) years old,
+                  and you are a competent driver.
+                </p>
+                <h2 class="text-base mt-4 font-semibold md:text-lg">
+                  CONTRACT DURATION
+                </h2>
+                <p class="mt-2 text-base md:text-lg">
+                  Once the wrap has been installed, minimum term is 4 weeks (1
+                  MONTH) and maximum is 12 weeks (3 MONTHS).
+                </p>
+                <div class="w-full mt-4 border-white rounded-md">
+                  <p class="italic">
+                    <span class="font-bold text-red-400">*</span> INDICATES
+                    REQUIRED FIELD
+                  </p>
+                  <form>
+                    <div
+                      class="mb-4 border-b border-r rounded-md p-2 border-white block"
+                    >
+                      <label
+                        class="block mb-2 text-sm font-bold text-white"
+                        for="name"
+                      >
+                        Name
+                      </label>
+                      <div class="block md:flex">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="name"
+                          type="text"
+                          placeholder="Firstname"
+                        />
+                        <input
+                          class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="name"
+                          type="text"
+                          placeholder="Lastname"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="mb-4 border-b border-r rounded-md p-2 border-white block"
+                    >
+                      <label
+                        class="block mb-2 text-sm font-bold text-white"
+                        for="name"
+                      >
+                        Address
+                      </label>
+                      <div class="block">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="address"
+                          type="text"
+                          placeholder="Line 1"
+                        />
+                      </div>
+                      <div class="block">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="address"
+                          type="text"
+                          placeholder="Line 2"
+                        />
+                      </div>
+                      <div class="block md:flex">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="address"
+                          type="text"
+                          placeholder="City"
+                        />
+                        <input
+                          class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="address"
+                          type="text"
+                          placeholder="State"
+                        />
+                      </div>
+                      <div class="block md:flex">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="address"
+                          type="number"
+                          placeholder="Zip Code"
+                        />
+                        <input
+                          class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="address"
+                          type="text"
+                          placeholder="Country"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="mb-4 border-b border-r rounded-md p-2 border-white block"
+                    >
+                      <label
+                        class="block mb-2 text-sm font-bold text-white"
+                        for="phone"
+                      >
+                        Phone number
+                      </label>
+                      <div class="block">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="phone"
+                          type="text"
+                          placeholder="Phonenumber"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="mb-4 border-b border-r rounded-md p-2 border-white block"
+                    >
+                      <label
+                        class="block mb-2 text-sm font-bold text-white"
+                        for="email"
+                      >
+                        Email
+                      </label>
+                      <div class="block">
+                        <input
+                          class="w-full px-3 py-2 mb-3 md:mr-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                          id="email"
+                          type="email"
+                          placeholder="Email"
+                        />
+                      </div>
+                      <div class="block">
+                        <button
+                          class="w-full bg-white px-3 py-2 mb-3 md:mr-2 text-sm leading-tight font-bold text-primary border rounded shadow appearance-none focus:outline-none focus:shadow-outline hover:bg-primary hover:text-white"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
